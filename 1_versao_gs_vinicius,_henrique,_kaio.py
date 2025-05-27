@@ -7,7 +7,15 @@ Original file is located at
     https://colab.research.google.com/drive/11-mHEYaios5sRj_xnJW2jtXXJZ3kKK4o
 """
 
-quantidade_desastre = int(input("Digite a quantidade de desastres?"))
+quantidade_desastre = int(input("Digite a quantidade de desastres? "))
+total_pessoas_afetadas_list = []
+numero_criancas_list = []
+numero_adultos_list = []
+numero_idosos_list = []
+numero_pessoas_mobilidade_reduzida_list = []
+numero_feridos_list = []
+dados_desastres = []
+erro = False
 
 for i in range(quantidade_desastre):
   tipo_desastre = input('Insira Tipo do Desastre: ' )
@@ -15,13 +23,32 @@ for i in range(quantidade_desastre):
   cidade=input('Digite a Cidade: ')
   bairro= input('Digite o Bairro: ')
   rua = input('Digite a Rua: ')
+  
+
   total_pessoas_afetadas = int(input('Digite o total de pessoas afetadas: '))
+  total_pessoas_afetadas_list.append(total_pessoas_afetadas)
+
   numero_criancas = int(input('Digite o numero de crianças: '))
+  numero_criancas_list.append(numero_criancas)
+
   numero_adultos = int(input('Digite o numero de adultos: '))
+  numero_adultos_list.append(numero_adultos)
+
   numero_idosos= int(input('Digite o numero de idosos: '))
+  numero_idosos_list.append(numero_idosos)
+
   numero_pessoas_mobilidade_reduzida = int(input('Digite o numero de pessoas mobilidade reduzida: '))
+  numero_pessoas_mobilidade_reduzida_list.append(numero_pessoas_mobilidade_reduzida)
+
   numero_feridos = int(input('Digite o numero de pessoas feridas: '))
+  numero_feridos_list.append(numero_feridos)
+
+  print('')
+
   if total_pessoas_afetadas == (numero_criancas + numero_adultos + numero_idosos + numero_pessoas_mobilidade_reduzida + numero_feridos):
-    print('')
+    dados_desastres.append([tipo_desastre, pais, cidade, bairro, rua, total_pessoas_afetadas, 
+                                numero_criancas, numero_adultos, numero_idosos, numero_pessoas_mobilidade_reduzida, numero_feridos])
   else:
     print('Erro, Tente Novamente')
+    erro = True
+    break
