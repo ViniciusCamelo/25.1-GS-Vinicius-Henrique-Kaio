@@ -52,3 +52,31 @@ for i in range(quantidade_desastre):
     print('Erro, Tente Novamente')
     erro = True
     break
+      
+    lista_desastre = [tipo_desastre, pais, cidade, bairro, rua, total_pessoas_afetadas]
+    lista_categoria = [numero_criancas_list, numero_adultos_list, numero_idosos_list, numero_pessoas_mobilidade_reduzida_list, numero_feridos_list]
+ 
+if not erro:
+  print(f'Total de Desastres registrados: {quantidade_desastre} ')
+  print('')
+ 
+  print(f'Resumo de pessoas afetadas por categoria:\nCrianças: {sum(numero_criancas_list)} | Adultos: {sum(numero_adultos_list)} | Idosos: {sum(numero_idosos_list)} | Mobilidade Reduzida: {sum(numero_pessoas_mobilidade_reduzida_list)} | Feridos: {sum(numero_feridos_list)}')
+  print('')
+ 
+  categorias = ['Crianças', 'Adultos', 'Idosos', 'Mobilidade Reduzida', 'Feridos']
+  valores = [sum(numero_criancas_list), sum(numero_adultos_list), sum(numero_idosos_list), sum(numero_pessoas_mobilidade_reduzida_list), sum(numero_feridos_list)]
+  indice_maior = valores.index(max(valores))
+  categoria_mais_afetada = categorias[indice_maior]
+ 
+  print(f'Categoria mais afetada: {categoria_mais_afetada}')
+  print(f'Total de Pessoas afetadas: {sum(total_pessoas_afetadas_list)}')
+  print('')
+ 
+  desastre_mais_afetado = dados_desastres[0]
+ 
+ 
+  for desastre in dados_desastres:
+      if desastre[5] > desastre_mais_afetado[5]:
+          desastre_mais_afetado = desastre
+ 
+  print(f'Desastre com maior número de afetados: \nTipo: {desastre_mais_afetado[0]} \nLocal: {desastre_mais_afetado[4]}, {desastre_mais_afetado[3]}, {desastre_mais_afetado[2]}, {desastre_mais_afetado[1]}')
