@@ -25,5 +25,3 @@ for i in range(quantidade_desastre):
     print('')
   else:
     print('Erro, Tente Novamente')
-lista_desastre = [tipo_desastre, pais, cidade, bairro, rua, total_pessoas_afetadas]
-lista_categoria = [numero_criancas, numero_adultos, numero_idosos, numero_pessoas_mobilidade_reduzida, numero_feridos]
